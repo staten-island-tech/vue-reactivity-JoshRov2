@@ -1,7 +1,4 @@
 <script setup>
-function onClick (name){
-  console.log(name)
-}
 const fishes = [
     {
         species: "Assorted African Cichlid(Pseudotropheus or Melanochromis spp.)",
@@ -53,17 +50,13 @@ const fishes = [
         type: "South American Cichlids",
     },
 ]
-
+const plants = [
+    
+]
+const supplies = [
+    
+]
+export { fishes, plants, supplies }
 </script>
-<template>
-  <div id="appEl"></div>
-  <ul>
-    <li v-for="fish in fishes">
-    {{ fish.name }}
-    {{ fish.price }}
-    <img :src= "destination.img"/>
-    <button id="print" @click = "onClick(fish.name)">Select</button>
-    </li>
-  </ul>
-</template>
+
 

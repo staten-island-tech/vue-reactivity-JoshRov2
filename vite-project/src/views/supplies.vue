@@ -1,5 +1,0 @@
-<script>
-const supplies = [
-    
-]
-</script>
