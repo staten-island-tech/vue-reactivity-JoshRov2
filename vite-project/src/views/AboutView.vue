@@ -6,6 +6,7 @@ import {fishes, plants, supplies } from '@/components/StoreCard.vue';
     <div>
         <fishes
         v-for fish in fishes
+        ></fishes>
     </div>
 </template>
 <style lang="scss" scoped>
