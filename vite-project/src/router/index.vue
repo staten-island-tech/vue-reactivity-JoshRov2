@@ -1,3 +1,4 @@
+<script setup>
 import { createRouter, createWebHistory } from 'vue-router'
 import MainPage from '../views/MainPage.vue'
 
@@ -18,3 +19,4 @@ const router = createRouter({
 })
 
 export default router
+</script>
