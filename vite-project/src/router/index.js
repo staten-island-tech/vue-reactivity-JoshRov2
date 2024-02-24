@@ -1,6 +1,5 @@
-<script setup>
 import { createRouter, createWebHistory } from 'vue-router'
-import MainPage from '../views/MainPage.vue'
+import HomeView from '../views/HomeView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,7 +7,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: MainPage
+      component: HomeView
     },
     {
       path: '/about',
@@ -19,4 +18,3 @@ const router = createRouter({
 })
 
 export default router
-</script>
