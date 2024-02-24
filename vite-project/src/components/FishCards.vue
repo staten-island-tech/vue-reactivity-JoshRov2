@@ -1,18 +1,19 @@
 <template>
-    <div>
-        <select class="fishSet">
-        <option v-for = "(fish, index) in fishes" :key="index">
-            <h2>{{ fish.species }}</h2>
-            <h3>{{ fish.price }}</h3>
-            <img src="fish.img" alt="FishImage">
-            <h3> {{ fish.rating }} </h3>
-        </option>
-        </select>
+    <div class="card-container">
+        <div v-for = "(fish, index) in fishes" :key="index">
+        <h2>{{ fish.species }}</h2>
+        <h3>{{ fish.price }}</h3>
+        <img src="fish.img" alt="FishImage">
+        <h3> {{ fish.rating }} </h3>
+        </div>
     </div>
 </template>
 
-<script setup>
-const fishes = [
+<script>
+export default {
+    data() {
+        return{
+            fishes: [
             {
                 species: "Assorted African Cichlid(Pseudotropheus or Melanochromis spp.)",
                 price: 11.99,
@@ -294,4 +295,28 @@ const fishes = [
                 type: "Miscellaneous",
             },
         ]
+        }
+    }
+}
+console.log(fishes)
 </script>
+
+<style scoped>
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card {
+    width: 200px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+.card-image {
+    max-width: 100%;
+    height: auto;
+}
+</style>
