@@ -7,6 +7,7 @@
         <img :src= "item.img"/>
         {{ "Rating: " + item.rating }}
         {{ item.type }}
+        <button id="delete" @click = "removeItem(fish)">Remove Item from Cart</button>
             </li>
         </ul>
     </div>

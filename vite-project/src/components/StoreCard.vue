@@ -1,15 +1,12 @@
 <template>
-    <div id="appEl"></div>
-  <ul>
-    <li v-for="fish in fishes" :key="fish.species">
-    {{ fish.species }}
-    {{"$" + fish.price }}
-    <img :src= "fish.img"/>
-    {{ "Rating: " + fish.rating }}
-    {{ fish.type }}
-    <button id="print" @click = "addItem(fish)">Select</button>
-    </li>
-  </ul>
+    <div id="appEl" v-for="fish in fishes" :key="fish.species">
+    <h2>{{ fish.species }}</h2>
+    <h3>{{"$" + fish.price }}</h3>
+    <h3><img :src= "fish.img"/></h3>
+    <h4>{{ "Rating: " + fish.rating }}</h4>
+    <h4>{{ fish.type }}</h4>
+    <button id="print" @click = "addItem(fish)">Add to Cart</button>
+  </div>
 </template>
 
 <script setup>
@@ -37,7 +34,7 @@ const fishes = [
             {
                 species: "Bumblebee Cichlid",
                 price: 6.00,
-                image: "https://s7d2.scene7.com/is/image/PetSmart/4031342?$sclp-prd-main_large$",
+                img: "https://s7d2.scene7.com/is/image/PetSmart/4031342?$sclp-prd-main_large$",
                 rating: 4.1,
                 type: "African Cichlids",
             },
@@ -303,21 +300,20 @@ const fishes = [
 ]
 </script>
 <style scoped>
-.card-container{
+#appEl{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-.card {
-    width: 200px;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
     text-align: center;
+    color: darkblue;
+    flex-direction: column;
+    border: 5px solid darkblue;
+    margin: 5%;
+    padding: 5%;
 }
-.card-image {
-    max-width: 100%;
-    height: auto;
+
+img {
+    width: 450px;
+    height: 300px;
 }
 </style>

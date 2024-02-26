@@ -1,5 +1,5 @@
 <script setup>
-import StoreCard from '../components/storeCard.vue'
+import StoreCard from '../components/StoreCard.vue'
 </script>
 
 <template>
