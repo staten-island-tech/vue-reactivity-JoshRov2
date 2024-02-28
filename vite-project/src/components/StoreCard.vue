@@ -309,7 +309,9 @@ const fishes = [
     flex-direction: column;
     border: 5px solid darkblue;
     margin: 5%;
+    background-color: white;
     padding: 5%;
+    position: relative;
 }
 
 img {
