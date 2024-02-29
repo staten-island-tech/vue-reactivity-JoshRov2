@@ -11,7 +11,7 @@
 
 <script setup>
 import { useCartStore } from '../stores/cart';
-var CartStore = useCartStore()
+let CartStore = useCartStore()
 function addItem(item){
     CartStore.addCart(item)
     console.log(CartStore.cart)
