@@ -7,7 +7,11 @@ import { RouterLink, RouterView } from 'vue-router'
     <img alt="Fish logo" class="logo" src="@/assets/logo.png" width="125" height="125" />
 
     <div class="wrapper">
-      <select name="" id=""></select>
+      <select name="Selector" id="itemDisplay">
+        <option value="Fish">Fish</option>
+        <option value="Decor">Decor</option>
+        <option value="Supplies">Supplies</option>
+      </select>
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/cart">Cart</RouterLink>
