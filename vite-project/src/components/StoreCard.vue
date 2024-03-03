@@ -7,7 +7,7 @@
         <option value="Supplies">Supplies</option>
       </select>
     </div>
-    <div id="appEl" v-for="object in objects" :key="object.species">
+    <div id="appEl" v-for="object in filteredObjects" :key="object.species">
     <h2>{{ object.species }}</h2>
     <h3>{{"$" + object.price }}</h3>
     <h3><img :src= "object.img"/></h3>
@@ -18,20 +18,16 @@
 </template>
 
 <script setup>
-import { useCartStore } from '../stores/cart';
-let CartStore = useCartStore()
+import { ref, computed } from 'vue'
+import { useCartStore } from '../stores/cart'
+const filterType = ref("All")
+let CartStore = useCartStore();
 function addItem(item){
     CartStore.addCart(item)
     console.log(CartStore.cart)
 }
 function filterArr(event){
-    let results; 
-    if(event.target.value === "All"){
-        results = allObjects
-    } else {
-        results = allObjects.filter(object => object.classification === event.target.value)
-    }
-    console.log(results)
+    filterType.value = event.target.value
 }
 const allObjects = [
     {
@@ -531,9 +527,14 @@ const allObjects = [
                 classification: "Supplies"
             },
 ]
-let objects = [
-    ...allObjects
-]
+let objects = ref(allObjects)
+const filteredObjects = computed(() => {
+  if (filterType.value === "All") {
+    return objects.value;
+  } else {
+    return objects.value.filter(object => object.classification === filterType.value);
+  }
+});
 </script>
 <style scoped>
 #appEl{
