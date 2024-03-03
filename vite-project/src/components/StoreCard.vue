@@ -18,28 +18,20 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 import { useCartStore } from '../stores/cart';
-let CartStore = useCartStore();
-const filterType = ref("All")
-const allType = computed(() => {
-  return allObjects;
-})
-const fishType = computed(() => {
-  return allObjects.filter(object => object.classification === "Fish")
-})
-const decorType = computed(() => {
-    return allObjects.filter(object => object.classification === "Decor")
-})
-const suppliesType = computed(() => {
-    return allObjects.filter(object => object.classification === "Supplies")
-})
+let CartStore = useCartStore()
 function addItem(item){
     CartStore.addCart(item)
     console.log(CartStore.cart)
 }
 function filterArr(event){
-    filterType.value = event.target.value;
+    let results; 
+    if(event.target.value === "All"){
+        results = allObjects
+    } else {
+        results = allObjects.filter(object => object.classification === event.target.value)
+    }
+    console.log(results)
 }
 const allObjects = [
     {
