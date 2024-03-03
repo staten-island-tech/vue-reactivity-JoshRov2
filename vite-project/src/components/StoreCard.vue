@@ -1,4 +1,12 @@
 <template>
+    <div class="selector">
+        <select name="Selector" id="itemDisplay" @change = "filterArr($event)">
+        <option value="All">All</option>
+        <option value="Fish">Fish</option>
+        <option value="Decor">Decor</option>
+        <option value="Supplies">Supplies</option>
+      </select>
+    </div>
     <div id="appEl" v-for="object in objects" :key="object.species">
     <h2>{{ object.species }}</h2>
     <h3>{{"$" + object.price }}</h3>
@@ -10,13 +18,30 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import { useCartStore } from '../stores/cart';
-let CartStore = useCartStore()
+let CartStore = useCartStore();
+const filterType = ref("All")
+const allType = computed(() => {
+  return allObjects;
+})
+const fishType = computed(() => {
+  return allObjects.filter(object => object.classification === "Fish")
+})
+const decorType = computed(() => {
+    return allObjects.filter(object => object.classification === "Decor")
+})
+const suppliesType = computed(() => {
+    return allObjects.filter(object => object.classification === "Supplies")
+})
 function addItem(item){
     CartStore.addCart(item)
     console.log(CartStore.cart)
 }
-const objects = [
+function filterArr(event){
+    filterType.value = event.target.value;
+}
+const allObjects = [
     {
                 species: "Assorted African Cichlid(Pseudotropheus or Melanochromis spp.)",
                 price: 11.99,
@@ -74,7 +99,7 @@ const objects = [
                 classification: "Fish",
             },
             {
-                species: "Comet Goldish",
+                species: "Comet Goldfish",
                 price: 0.36,
                 img: "https://s7d2.scene7.com/is/image/PetSmart/4032785?$CLEARjpg$",
                 rating: 4.0,
@@ -514,6 +539,9 @@ const objects = [
                 classification: "Supplies"
             },
 ]
+let objects = [
+    ...allObjects
+]
 </script>
 <style scoped>
 #appEl{
@@ -528,6 +556,7 @@ const objects = [
     background-color: white;
     padding: 5%;
     position: relative;
+    border-radius: 15px;
 }
 
 img {

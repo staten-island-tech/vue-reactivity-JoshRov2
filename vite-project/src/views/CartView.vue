@@ -12,6 +12,12 @@
 <script setup>
     import { useCartStore } from '@/stores/cart';
     const CartStore = useCartStore()
+    /* import { useTankBuild } from '../stores/tank';
+let TankBuild = useCartStore()
+function addItem(item){
+    TankBuild.addCart(item)
+    console.log(TankBuild.cart) */
+
 </script>
 
 <style scoped>
@@ -26,6 +32,7 @@
     margin: 5%;
     background-color: white;
     padding: 5%;
+    border-radius: 15px;
     -ms-flex-align: center;
     position: relative;
 }

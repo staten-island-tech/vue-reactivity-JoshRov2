@@ -7,15 +7,10 @@ import { RouterLink, RouterView } from 'vue-router'
     <img alt="Fish logo" class="logo" src="@/assets/logo.png" width="125" height="125" />
 
     <div class="wrapper">
-      <select name="Selector" id="itemDisplay">
-        <option value="Fish">Fish</option>
-        <option value="Decor">Decor</option>
-        <option value="Supplies">Supplies</option>
-      </select>
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/cart">Cart</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/builder">Builder</RouterLink>
         
       </nav>
     </div>
@@ -37,12 +32,14 @@ header {
   height: 400px;
   background-color: white;
   border: 5px solid darkblue;
+  border-radius: 15px;
 }
 
 nav {
   width: 100%;
   font-size: 12px;
   text-align: center;
+  justify-content: center;
   margin-top: 2rem;
 }
 
