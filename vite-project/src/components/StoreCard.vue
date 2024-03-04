@@ -7,6 +7,7 @@
         <option value="Supplies">Supplies</option>
       </select>
     </div>
+    <div id="container">
     <div id="appEl" v-for="object in filteredObjects" :key="object.species">
     <h2>{{ object.species }}</h2>
     <h3>{{"$" + object.price }}</h3>
@@ -15,6 +16,7 @@
     <h4>{{ object.type }}</h4>
     <button id="print" @click = "addItem(object)">Add to Cart</button>
   </div>
+</div>
 </template>
 
 <script setup>
@@ -526,6 +528,142 @@ const allObjects = [
                 type: "Food",
                 classification: "Supplies"
             },
+            {
+                species: "Tank-Mounted Filter",
+                price: 48.99,
+                img: "https://s7d2.scene7.com/is/image/PetSmart/1832664?$CLEARjpg$",
+                rating: 4.0,
+                type: "Pumps",
+                classification: "Supplies"
+            },
+            {
+                species: "Canister Filter",
+                price: 369.99,
+                img: "https://s7d2.scene7.com/is/image/PetSmart/5105630?$CLEARjpg$",
+                rating: 4.5,
+                type: "Pumps",
+                classification: "Supplies"
+            },
+            {
+                species: "Air Pump",
+                price: 31.99,
+                img: "https://s7d2.scene7.com/is/image/PetSmart/5094985?$CLEARjpg$",
+                rating: 3.3,
+                type: "Pumps",
+                classification: "Supplies"
+            },
+            {
+                species: "Filter Insert",
+                price: 5.99,
+                img: "https://s7d2.scene7.com/is/image/PetSmart/1833330?$CLEARjpg$",
+                rating: 5.0,
+                type: "Pumps",
+                classification: "Supplies"
+            },
+            {
+                species: "Sponge Filter",
+                price: 14.99,
+                img: "https://s7d2.scene7.com/is/image/PetSmart/5308108?$CLEARjpg$",
+                rating: 4.7,
+                type: "Pumps",
+                classification: "Supplies"
+            },
+            {
+                species: "Aquarium Scrubber",
+                price: 7.99,
+                img: "https://s7d2.scene7.com/is/image/PetSmart/5175087?$CLEARjpg$",
+                rating: 4.8,
+                type: "Maintenance",
+                classification: "Supplies"
+            },
+            {
+                species: "Water Changing Pump",
+                price: 79.99,
+                img: "https://s7d2.scene7.com/is/image/PetSmart/5291004?$CLEARjpg$",
+                rating: 3.8,
+                type: "Maintenance",
+                classification: "Supplies"
+            },
+            {
+                species: "Fish Net",
+                price: 4.99,
+                img: "https://s7d2.scene7.com/is/image/PetSmart/5282578?$CLEARjpg$",
+                rating: 4.9,
+                type: "Nets",
+                classification: "Supplies"
+            },
+            {
+                species: "Mesh Tank Divider",
+                price: 7.99,
+                img: "https://s7d2.scene7.com/is/image/PetSmart/5149544_alt2?$CLEARjpg$",
+                rating: 2.8,
+                type: "Nets",
+                classification: "Supplies"
+            },
+            {
+                species: "LED Light Bar",
+                price: 109.99,
+                img: "https://s7d2.scene7.com/is/image/PetSmart/5282428?$CLEARjpg$",
+                rating: 4.4,
+                type: "Accessories",
+                classification: "Supplies"
+            },
+            {
+                species: "Full Aquarium Hood",
+                price: 59.99,
+                img: "https://s7d2.scene7.com/is/image/PetSmart/5163875?$CLEARjpg$",
+                rating: 3.5,
+                type: "Accessories",
+                classification: "Supplies"
+            },
+            {
+                species: "Submersible Heater",
+                price: 27.99,
+                img: "https://s7d2.scene7.com/is/image/PetSmart/5301265?$CLEARjpg$",
+                rating: 4.1,
+                type: "Accessories",
+                classification: "Supplies"
+            },
+            {
+                species: "20 Gallon Aquarium",
+                price: 27.49,
+                img: "https://s7d2.scene7.com/is/image/PetSmart/5345487?$CLEARjpg$",
+                rating: 4.2,
+                type: "Tanks",
+                classification: "Supplies"
+            },
+            {
+                species: "50 Gallon Aquarium",
+                price: 149.99,
+                img: "https://s7d2.scene7.com/is/image/PetSmart/5309261_alt2?$CLEARjpg$",
+                rating: 4.0,
+                type: "Tanks",
+                classification: "Supplies"
+            },
+            {
+                species: "20 Gallon Stand",
+                price: 179.99,
+                img: "https://s7d2.scene7.com/is/image/PetSmart/5309120?$CLEARjpg$",
+                rating: 4.0,
+                type: "Tanks",
+                classification: "Supplies"
+            },
+            {
+                species: "50 Gallon Stand",
+                price: 299.99,
+                img: "https://s7d2.scene7.com/is/image/PetSmart/5309123?$CLEARjpg$",
+                rating: 3.5,
+                type: "Tanks",
+                classification: "Supplies"
+            },
+            {
+                species: "Full 125 Gallon Kit",
+                price: 999.99,
+                img: "https://s7d2.scene7.com/is/image/PetSmart/5262172?$CLEARjpg$",
+                rating: 4.0,
+                type: "Tanks",
+                classification: "Supplies"
+            },
 ]
 let objects = ref(allObjects)
 const filteredObjects = computed(() => {
@@ -550,10 +688,29 @@ const filteredObjects = computed(() => {
     padding: 5%;
     position: relative;
     border-radius: 15px;
+    width: 40%;
+    height: 70%;
+}
+#container{
+    width: 100%;
+    flex-direction: row;
 }
 
 img {
-    width: 450px;
-    height: 300px;
+    width: 75%;
+    height: 75%;
+    padding: 2%;
+}
+#itemDisplay{
+    text-align: center;
+    color: darkblue;
+    background-color: white;
+    border: 1px solid darkblue;
+    border-radius: 1px;
+    width: 100px;
+    height: 50px;
+    font-size: 100%;
+    padding: 1%;
+    margin: 1%;
 }
 </style>

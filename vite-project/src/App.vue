@@ -5,13 +5,11 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
   <header>
     <img alt="Fish logo" class="logo" src="@/assets/logo.png" width="125" height="125" />
-
+    <h1>Aquarium Store</h1>
     <div class="wrapper">
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/cart">Cart</RouterLink>
-        <RouterLink to="/builder">Builder</RouterLink>
-        
+        <h2><RouterLink to="/">Shop</RouterLink></h2>
+        <h2><RouterLink to="/cart">Cart</RouterLink></h2>        
       </nav>
     </div>
   </header>
@@ -23,6 +21,7 @@ import { RouterLink, RouterView } from 'vue-router'
 header {
   line-height: 1.5;
   max-height: 100vh;
+  justify-content: center;
 }
 
 .logo {
@@ -36,6 +35,7 @@ header {
 }
 
 nav {
+  display: block;
   width: 100%;
   font-size: 12px;
   text-align: center;
@@ -66,6 +66,7 @@ nav a:first-of-type {
     display: flex;
     place-items: center;
     padding-right: calc(var(--section-gap) / 2);
+    color: lightblue;
   }
 
   .logo {
