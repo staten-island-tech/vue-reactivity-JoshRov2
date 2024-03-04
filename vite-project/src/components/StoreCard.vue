@@ -7,7 +7,6 @@
         <option value="Supplies">Supplies</option>
       </select>
     </div>
-    <div id="container">
     <div id="appEl" v-for="object in filteredObjects" :key="object.species">
     <h2>{{ object.species }}</h2>
     <h3>{{"$" + object.price }}</h3>
@@ -16,7 +15,6 @@
     <h4>{{ object.type }}</h4>
     <button id="print" @click = "addItem(object)">Add to Cart</button>
   </div>
-</div>
 </template>
 
 <script setup>
@@ -683,23 +681,16 @@ const filteredObjects = computed(() => {
     color: darkblue;
     flex-direction: column;
     border: 5px solid darkblue;
-    margin: 5%;
+    margin: 3%;
     background-color: white;
-    padding: 5%;
+    padding: 3%;
     position: relative;
     border-radius: 15px;
-    width: 40%;
-    height: 70%;
+    width: 90%;
 }
-#container{
-    width: 100%;
-    flex-direction: row;
-}
-
 img {
-    width: 75%;
-    height: 75%;
-    padding: 2%;
+    width: 450px;
+    height: 300px;
 }
 #itemDisplay{
     text-align: center;

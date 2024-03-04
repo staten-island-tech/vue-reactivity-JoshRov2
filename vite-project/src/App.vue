@@ -4,10 +4,10 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header>
-    <img alt="Fish logo" class="logo" src="@/assets/logo.png" width="125" height="125" />
-    <h1>Aquarium Store</h1>
     <div class="wrapper">
       <nav>
+    <img alt="Fish logo" class="logo" src="@/assets/logo.png" width="125" height="125" />
+    <h1>Aquarium Store</h1>
         <h2><RouterLink to="/">Shop</RouterLink></h2>
         <h2><RouterLink to="/cart">Cart</RouterLink></h2>        
       </nav>
@@ -26,7 +26,6 @@ header {
 
 .logo {
   display: block;
-  margin: 0 auto 2rem;
   width: 400px;
   height: 400px;
   background-color: white;
@@ -54,7 +53,6 @@ nav a.router-link-exact-active:hover {
 nav a {
   display: inline-block;
   padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
 }
 
 nav a:first-of-type {
@@ -65,7 +63,6 @@ nav a:first-of-type {
   header {
     display: flex;
     place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
     color: lightblue;
   }
 
@@ -75,15 +72,14 @@ nav a:first-of-type {
 
   header .wrapper {
     display: flex;
-    place-items: flex-start;
+    place-content: center;
     flex-wrap: wrap;
+
   }
 
   nav {
-    text-align: left;
-    margin-left: -1rem;
+    text-align: center;
     font-size: 1rem;
-
     padding: 1rem 0;
     margin-top: 1rem;
   }
